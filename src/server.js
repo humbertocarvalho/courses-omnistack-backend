@@ -1,8 +1,7 @@
 const express = require('express');
+const routes = require('./routes');
+
 const server = express();
 
-server.get('/', (request, response) => {
-  return response.send('Hello world');
-});
-
+server.use(routes);
 server.listen(3333);
