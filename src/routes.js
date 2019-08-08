@@ -1,4 +1,5 @@
 const express = require('express');
+const DevController = require('./controllers/Dev');
 
 const routes = express.Router();
 
@@ -6,9 +7,6 @@ routes.get('/', (request, response) => {
   return response.send('Hello world');
 });
 
-routes.post('/devs', (request, respose) => {
-  console.log(request.body);
-  return respose.send({ ok: true });
-});
+routes.post('/devs', DevController.store);
 
 module.exports = routes;
