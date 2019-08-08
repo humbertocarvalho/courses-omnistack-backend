@@ -1,12 +1,10 @@
 const express = require('express');
 const DevController = require('./controllers/Dev');
+const LikeController = require('./controllers/Like');
 
 const routes = express.Router();
 
-routes.get('/', (request, response) => {
-  return response.send('Hello world');
-});
-
 routes.post('/devs', DevController.store);
+routes.post('/devs/:devId/likes', LikeController.store);
 
 module.exports = routes;

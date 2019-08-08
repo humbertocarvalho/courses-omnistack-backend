@@ -15,7 +15,7 @@ module.exports = {
       `https://api.github.com/users/${username}`
     );
 
-    const { name, bio, avatar_url: avatar } = apiresponse.data;
+    const { name, bio, avatar_url: avatar } = apiResponse.data;
     const dev = await Dev.create({
       name,
       user: username,
